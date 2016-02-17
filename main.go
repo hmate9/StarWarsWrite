@@ -25,17 +25,10 @@ func main() {
         log.Panic(err)
     }
 	for i, frame := range frames {
-		// Clear the screen
-		/*defer stdin.Close()
-		stdin.Write(clearScreenSeq)
-		defer stdin.Close()
-		stdin.Write(moveCursorSeq)*/
-		// Show the movie
 		defer stdin.Close()
 		io.Copy(stdin, bytes.NewBufferString("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"))
    		defer stdin.Close()
 		io.Copy(stdin, bytes.NewBufferString(frame))
-		// os.Stdout.Write([]byte(frame))
 		time.Sleep(time.Duration(int64(repeats[i]) * 67e6))
 	}
 }
